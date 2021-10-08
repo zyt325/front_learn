@@ -1,0 +1,7 @@
+table{
+    border-collapse: collapse;
+    align-content: center;
+}
+td{
+    cursor: pointer;
+}
