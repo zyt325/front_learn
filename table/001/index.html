@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格隔行换色</title>
+</head>
+<link rel="stylesheet" href="./index.css">
+<script src="./index.js"></script>
+
+<body>
+    <!-- 
+        表格隔行换色
+            思路分析：
+                1、准备表格：表头thead与表体tbody
+                2、绑定事件：加载事件 onload()
+                3、获取元素：获取表格 document.getElementById()
+                4、获取行的长度：表体中tr的数量 length
+                5、行数遍历：for循环
+                6、判断奇偶数：tr的下标余2
+                7、设置背景颜色： css
+
+     -->
+    <div>
+        <table class="tb" border="1">
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th>head1</th>
+                    <th>head2</th>
+                    <th>head3</th>
+                </tr>
+            </thead>
+            <!-- 表体 -->
+            <tbody>
+                <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>32</td>
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>42</td>
+                    <td>43</td>
+                </tr>
+                <tr>
+                    <td>51</td>
+                    <td>52</td>
+                    <td>53</td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>62</td>
+                    <td>63</td>
+                </tr>
+                <tr>
+                    <td>71</td>
+                    <td>72</td>
+                    <td>73</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

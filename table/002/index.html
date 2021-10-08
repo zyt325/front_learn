@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格的全选、全不选与反选</title>
+</head>
+<link rel="stylesheet" href="./index.css">
+<script src="./index.js"></script>
+
+<body>
+    <!-- 
+        表格的全选、全不选与反选
+            思路分析：
+                1、绑定事件：绑定复选框的点击事件，编写函数
+                2、判断复选框的状态：复选框是否被选中
+                3、如果复选框状态被选中，则下面的所有复选框被选中
+                4、如果复选框状态未被选中，则厦门的所有复选框不被选中
+     -->
+    <table class="tb" border="1">
+        <!-- 表头 -->
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="all"><button>反选</button></th>
+                <th>head1</th>
+                <th>head2</th>
+                <th>head3</th>
+            </tr>
+        </thead>
+        <!-- 表体 -->
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>31</td>
+                <td>32</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>41</td>
+                <td>42</td>
+                <td>43</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>51</td>
+                <td>52</td>
+                <td>53</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>61</td>
+                <td>62</td>
+                <td>63</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ck"></td>
+                <td>71</td>
+                <td>72</td>
+                <td>73</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
