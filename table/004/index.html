@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左右移动</title>
+</head>
+<link rel="stylesheet" href="./index.css">
+<script src="./index.js"></script>
+
+<body>
+    <!-- 
+        左右移动
+            思路分析：
+                1、绑定事件：对应的按钮绑定点击事件
+                2、获取选中项：获取指定下拉框被选中的选项
+                3、按钮类型：根据不同的按钮移动不同的选项
+                    移动一项：获取下拉框被选中的第一项
+                    移动多项：获取下拉框被选中的选项
+                    移动全部：获取下拉框的选项
+                4、移动元素；使用appendChild()方法追加元素
+                    
+     -->
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <select id="leftList" multiple="true">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>0</option>
+                    </select>
+                </td>
+                <td>
+                    <label id="btnLeft">
+                        <button name="single">&gt</button>
+                        <button name="multi">&gt&gt</button>
+                        <button name="all">&gt&gt&gt</button>
+                    </label>
+                    <label id="btnRight">
+                        <button name="single">&lt</button>
+                        <button name="multi">&lt&lt</button>
+                        <button name="all">&lt&lt&lt</button>
+                    </label>
+                </td>
+                <td>
+                    <select id="rightList" multiple="true"></select>
+                </td>
+            </tr>
+        </table>
+
+
+
+    </div>
+</body>
+
+</html>

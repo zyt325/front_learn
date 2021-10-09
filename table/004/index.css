@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+select {
+    width: 80px;
+    height: 180px;
+    overflow: auto;
+}
+
+select option {
+    padding-top: 2px;
+}
+
+label {
+    display: block;
+    width: 40px;
+    padding: 6px 0;
+}
+
+button {
+    display: block;
+    border-width: 1px;
+    margin: 2px 0;
+}

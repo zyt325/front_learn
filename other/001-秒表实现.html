@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秒表实现</title>
+</head>
+<style>
+    .date {
+        width: 100px;
+        height: 36px;
+        line-height: 36px;
+        background-color: black;
+        border-radius: 18px;
+        color: lime;
+        font-size: 20px;
+        text-align: center;
+        margin: auto;
+    }
+    
+    button {
+        border-radius: 20%;
+    }
+</style>
+<script>
+    function getDate() {
+        var curDate = new Date();
+        var hour = curDate.getHours();
+        var minute = curDate.getMinutes();
+        var second = curDate.getSeconds();
+        var curTime = hour + ":" + minute + ":" + second;
+        document.getElementById("mydate").innerHTML = curTime;
+    }
+
+    // 定时器标示
+    var timeId;
+
+    function startDate() {
+        timeId = setInterval(getDate, 1000);
+    }
+
+    function stopDate() {
+        clearInterval(timeId);
+    }
+    // 当页面加载完毕时，将时间显示在页面中，并调用开始方法
+    window.onload = function() {
+        getDate();
+        startDate();
+        document.getElementById('start').onclick = function() {
+            startDate();
+        }
+        document.getElementById('stop').onclick = function() {
+            stopDate();
+        }
+    }
+</script>
+
+<body>
+    <!-- 
+        秒表
+            思路分析：
+                1、获取时间：获取系统的当前时间，得到时、分、秒(new Date())
+                2、设置定时器：按照指定的周期定时指定代码（setInterval()）
+                3、绑定事件：绑定开始按钮与暂停按钮的点击事件
+     -->
+    <div class="date">
+        <span id="mydate">00:00:00</span>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button id="start">开始</button>
+        <button id="stop">暂停</button>
+    </div>
+</body>
+
+</html>
