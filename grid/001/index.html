@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户选择爱好</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content;
+        gap: 10px;
+    }
+    
+    .container .container-item {
+        padding: 2px;
+    }
+    
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 80px);
+        list-style-type: none;
+        gap: 5px;
+    }
+    
+    li {
+        padding: 1px 2px;
+        border: 1px solid saddlebrown;
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    li:hover {
+        cursor: pointer;
+        background-color: beige;
+    }
+</style>
+<script>
+    window.onload = function() {
+        var unselected = document.getElementsByClassName('unselected');
+        var unselectedList = unselected[0].children;
+        var selected = document.getElementsByClassName('selected');
+        var selectedList = selected[0].children;
+
+        unselected[0].addEventListener('click', function(ev) {
+            // console.log(ev);
+            if (ev.target.childElementCount == 0) {
+                selected[0].appendChild(ev.target);
+            }
+        })
+
+        selected[0].addEventListener('click', function(ev) {
+            if (ev.target.childElementCount == 0) {
+                unselected[0].appendChild(ev.target);
+            }
+        })
+
+        // for (var i = 0; i < unselectedList.length; i++) {
+        //     unselectedList[i].onclick = function() {
+        //         selected[0].append(this);
+        //     }
+        // }
+    }
+</script>
+
+<body>
+    <div class="container">
+        <div class="container-item">
+            <h2>从下面选择爱好：</h2>
+            <ul class="unselected">
+                <li>摄影</li>
+                <li>编程</li>
+                <li>看电影</li>
+                <li>看书</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+                <li>游戏</li>
+            </ul>
+        </div>
+        <div class="container-item">
+            <h2>以选择的爱好：</h2>
+            <ul class="selected"></ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

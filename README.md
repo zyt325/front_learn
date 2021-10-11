@@ -6,6 +6,10 @@ https://hub.fastgit.org/zxuqian/html-css-examples
 1. 输入框轮廓
 1. 省市联动
 
+### grid
+1. 用户选择爱好
+2. grid示例
+
 ### menu
 1. 响应式菜单
 1. 侧边导航栏
