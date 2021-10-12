@@ -43,9 +43,9 @@
     
     .buttons {
         position: absolute;
-        left: 180px;
+        left: 170px;
         bottom: 4px;
-        width: 120px;
+        width: 140px;
         height: 20px;
         z-index: 2;
     }
@@ -60,10 +60,33 @@
         background-color: mediumslateblue;
     }
     
-    .arrow {
+    .buttons span.on {
+        background-color: red;
+    }
+    
+    .arrow_left {
         position: absolute;
-        left: 200px;
-        bottom: 4px;
+        left: 20px;
+        bottom: 180px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: mediumslateblue;
+        z-index: 2;
+    }
+    
+    .arrow_right {
+        position: absolute;
+        right: 20px;
+        bottom: 180px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: mediumslateblue;
         z-index: 2;
     }
     
@@ -75,14 +98,74 @@
 
 <script>
     window.onload = function() {
-        var imgs = document.getElementsByTagName('img');
         var buttons = document.getElementsByClassName('buttons');
         var wrap = document.getElementsByClassName('wrap');
-        for (var i = 0; i < buttons[0].children.length; i++) {
-            buttons[0].children[i].onclick = function() {
-                console.log(this)
-                wrap[0].style.left = '-480px';
+
+        // 设置点击按钮是否选中
+        function curImgButton() {
+            for (var i = 0; i < buttons[0].children.length; i++) {
+                buttons[0].children[i].className = "";
             }
+            buttons[0].children[-wrap[0].offsetLeft / 480].className = "on"
+        }
+
+        var arrow_left = document.getElementsByClassName('arrow_left');
+        var arrow_right = document.getElementsByClassName('arrow_right');
+        // 上一张
+        function lastImg() {
+            wrap_left = wrap[0].offsetLeft;
+            // console.log(wrap_left)
+            if (wrap_left == 0) {
+                wrap[0].style.left = '-' + (wrap[0].children.length - 1) * 480 + 'px'
+            } else {
+                wrap[0].style.left = wrap_left + 480 + 'px'
+            }
+            curImgButton();
+        }
+
+        // 下一张
+        function nextImg() {
+            wrap_left = wrap[0].offsetLeft;
+            // console.log(wrap_left)
+            if (wrap_left == '-' + (wrap[0].children.length - 1) * 480) {
+                wrap[0].style.left = '-' + 0 + 'px'
+            } else {
+                wrap[0].style.left = wrap_left - 480 + 'px'
+            }
+            curImgButton();
+
+        }
+
+        // 自动播放
+        var timer;
+
+        function autoPlay() {
+            timer = setInterval(function() {
+                nextImg();
+            }, 2000);
+        }
+        autoPlay();
+
+        // 点击上一张按钮
+        arrow_left[0].onclick = function() {
+                clearInterval(timer);
+                lastImg()
+            }
+            // 点击下一张按钮
+        arrow_right[0].onclick = function() {
+            clearInterval(timer);
+            nextImg()
+        }
+
+        // 点击数字按钮
+        for (var i = 0; i < buttons[0].children.length; i++) {
+            buttons[0].onclick = function(ev) {
+                clearInterval(timer);
+                // console.log(ev)
+                wrap[0].style.left = '-' + (ev.target.innerText - 1) * 480 + 'px';
+                buttons
+            }
+            curImgButton()
         }
     }
 </script>
@@ -103,7 +186,7 @@
             <span>3</span>
             <span>4</span>
             <span>5</span>
-            <span>6 </span>
+            <span>6</span>
         </div>
         <a href="javascript:void(0);" class="arrow arrow_left">&lt;</a>
         <a href="javascript:void(0);" class="arrow arrow_right">&gt;</a>
