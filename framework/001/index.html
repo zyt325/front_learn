@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格数据渲染框架</title>
+</head>
+<link rel="stylesheet" href="./index.css">
+<script type="text/javascript" src="./xTable.js"></script>
+
+<body>
+    <div id="box">
+
+    </div>
+</body>
+<script type="text/javascript">
+    new xTable({
+        el: '#box',
+        thead: ['id', 'username', 'age', 'email'],
+        columns: [{
+            'key': 'id'
+        }, {
+            'key': 'username'
+        }, {
+            'key': 'age'
+        }, {
+            'key': 'email'
+        }, ],
+        data: [{
+            'id': 1,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }, {
+            'id': 2,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }, {
+            'id': 3,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }, {
+            'id': 4,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }, {
+            'id': 5,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }, {
+            'id': 6,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }, {
+            'id': 7,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }, {
+            'id': 8,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }, {
+            'id': 9,
+            'username': '张3',
+            'age': 18,
+            'email': 'z3@qq.com'
+        }]
+    })
+</script>
+
+</html>
